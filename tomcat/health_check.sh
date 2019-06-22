@@ -7,8 +7,9 @@ MAX_CPU=600
 # CHECK IF ERR AND RESTART IT
 function check(){
   # get cpu rate and pid
-  cpu=`ps -aux|grep "$JDK_HOME/bin/java -Djava.util.logging.config.file=$1/conf"|grep -v 'grep'|awk '{print $3}'`
+   #cpu=`ps -aux|grep "$JDK_HOME/bin/java -Djava.util.logging.config.file=$1/conf"|grep -v 'grep'|awk '{print $3}'`
   pid=`ps -aux|grep "$JDK_HOME/bin/java -Djava.util.logging.config.file=$1/conf"|grep -v 'grep'|awk '{print $2}'`
+  cpu=`top -n 1 -p $pid|grep java|awk '{print $11}'`
   
   # check if need to restart server
   cpu=`echo ${cpu%.*}`
