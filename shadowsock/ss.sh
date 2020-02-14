@@ -67,7 +67,7 @@ if [ "$3" != "" ];then
     IP=$3
 fi
 
-if [ "$1" = "i" ];then
+if [ "$2" = "i" ];then
     install
 elif [ "$1" = "server" ];then
     if [ "$2" = "start" ];then
@@ -90,8 +90,8 @@ elif [ "$1" = "client" ];then
         kill_client
     else
         # 重启服务
-        start_client
         kill_client
+        start_client
     fi
 else
     echo '# ss.sh 用法：'
