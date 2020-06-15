@@ -67,7 +67,7 @@ if [ "$3" != "" ];then
     IP=$3
 fi
 
-if [ "$2" = "i" ];then
+if [ "$1" = "i" ];then
     install
 elif [ "$1" = "server" ];then
     if [ "$2" = "start" ];then
@@ -95,7 +95,7 @@ elif [ "$1" = "client" ];then
     fi
 else
     echo '# ss.sh 用法：'
-    echo './ss.sh server i'
-    echo './ss.sh server [ start | stop | restart ]'
-    echo './ss.sh client [ start | stop | restart ] [$IP]'
+    echo './ss.sh i                                       # 安装shadowsocks'
+    echo './ss.sh server [ start | stop | restart ]       # 服务端的开启|停止|重启'
+    echo './ss.sh client [ start | stop | restart ] [$IP] # 服务端的开启|停止|重启'
 fi
