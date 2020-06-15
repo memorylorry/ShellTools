@@ -1,11 +1,9 @@
 # so
 This is a SSH login tool
 
-![alt text](http://images2015.cnblogs.com/blog/777900/201510/777900-20151009222826659-1147858761.gif)
-
 ## Linux ssh 登陆工具:
 
-###　一.说明
+### 一.说明
 - 支持秘密和密钥两种格式
 - 用户名和密码都是写文件的,明文保存
 
@@ -20,3 +18,11 @@ This is a SSH login tool
 ### 三.使用方法
 
 直接执行connect.sh即可提示。
+
+### 四.下载
+
+wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/linkshell/connect.sh
+
+wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/linkshell/password.lst
+
+wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/linkshell/ssh_login.exp
