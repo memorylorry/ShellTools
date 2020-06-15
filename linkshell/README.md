@@ -1,7 +1,5 @@
-# so
+# Linux ssh 登陆工具:
 This is a SSH login tool
-
-## Linux ssh 登陆工具:
 
 ### 一.说明
 - 支持秘密和密钥两种格式
