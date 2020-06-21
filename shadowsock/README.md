@@ -43,7 +43,8 @@ chmod +x ss.sh
 ```
 
 # Window客户端使用
-1. [下载小飞机]('https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.1.10.0/Shadowsocks-4.1.10.0.zip')，并启动，你将会看到如下界面；并按照如下配置IP、密码、加密方式。
+
+1. [下载小飞机](https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.1.10.0/Shadowsocks-4.1.10.0.zip)，并启动，你将会看到如下界面；并按照如下配置IP、密码、加密方式。
 
 ![avatar](./assets/ss_win_guide_01.jpg)
 
