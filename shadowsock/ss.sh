@@ -23,11 +23,18 @@ get_port(){
 # 启动服务端
 start_server(){
     get_port
-    #ssserver -p $PORT -k $PASS -m $METHOD --workers 10 --pid-file /tmp/ss.pid --log-file /tmp/ss.log -d start
+    ssserver -p $PORT -k $PASS -m $METHOD --workers 10 --pid-file /tmp/ss.pid --log-file /tmp/ss.log -d start
 
     echo "端口： "$PORT
     echo "密码： "$PASS
     echo "加密方式： "$METHOD
+}
+# 使用默认的多用户配置启动服务端
+start_server_with_json(){
+    get_port
+    ssserver -c servercfg.json --workers 10 --pid-file /tmp/ss.pid --log-file /tmp/ss.log -d start
+    echo "多用户方式！ "
+    echo `cat servercfg.json`
 }
 
 # 杀死服务器
@@ -36,7 +43,7 @@ kill_server(){
     for id in ${ids[@]}
     do
         kill -9 $id
-        echo 'kill -9 $id'
+        echo "kill -9 $id"
     done
 }
 
@@ -77,6 +84,9 @@ elif [ "$1" = "server" ];then
     if [ "$2" = "start" ];then
         # 启动服务  
         start_server
+    elif [ "$2" = "muls" ];then
+        # 使用已有配置模板启动服务  
+        start_server_with_json
     elif [ "$2" = "stop" ];then
         # 停止服务
         kill_server
@@ -100,6 +110,6 @@ elif [ "$1" = "client" ];then
 else
     echo '# ss.sh 用法：'
     echo './ss.sh i                                       # 安装shadowsocks'
-    echo './ss.sh server [ start | stop | restart ]       # 服务端的开启|停止|重启'
+    echo './ss.sh server [ start |muls | stop | restart ]       # 服务端的开启|使用servercfg.json开启多用户|停止|重启'
     echo './ss.sh client [ start | stop | restart ] [$IP] # 服务端的开启|停止|重启'
 fi

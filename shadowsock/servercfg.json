@@ -1,0 +1,17 @@
+{
+    "notice":"请把server字段，改为外网IP",
+    "server":"127.0.0.1",
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "port_password": {
+        "6000": "pass1",
+        "6001": "pass2",
+        "6002": "pass3",
+        "6003": "pass4",
+        "6004": "pass5",
+        "6005": "pass6"
+    },
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false
+}

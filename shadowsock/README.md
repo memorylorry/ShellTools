@@ -9,6 +9,8 @@ wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/shadowsock/
 
 wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/shadowsock/ss.sh
 
+wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/shadowsock/servercfg.json
+
 # 更改权限
 
 chmod +x ss.sh
@@ -64,3 +66,4 @@ chmod +x ss.sh
 # 文件结构
 1. ss.sh  管理脚本，含IP、加密方式等信息
 2. PORT_VAL 支持自动增长的端口值存放位置
+3. servercfg.json 默认的多用户账户模板
