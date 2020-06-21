@@ -1,17 +1,21 @@
 # 端口
-PORT=9000
+PORT=6000
 # 密码
 PASS=9527
 # 加密方法
 METHOD="aes-256-cfb"
 # sslocal所用的IP
 IP=127.0.0.1
+# 端口值增长，即在每次重启该脚本时，是否让端口值增加 0-不增 1-增
+INC_PORT=0
 
 # 获取端口，并回写端口增1
 get_port(){
     PORT=`cat PORT_VAL`
-    PORT_NEXT=`expr $PORT + 1`
-    echo $PORT_NEXT > "PORT_VAL"
+    if [[ $INC_PORT == 1 ]];then
+        PORT_NEXT=`expr $PORT + 1`
+        echo $PORT_NEXT > "PORT_VAL"
+    fi
     # echo $PORT
     return $PORT
 }
@@ -19,7 +23,7 @@ get_port(){
 # 启动服务端
 start_server(){
     get_port
-    ssserver -p $PORT -k $PASS -m $METHOD --workers 10 --pid-file /tmp/ss.pid --log-file /tmp/ss.log -d start
+    #ssserver -p $PORT -k $PASS -m $METHOD --workers 10 --pid-file /tmp/ss.pid --log-file /tmp/ss.log -d start
 
     echo "端口： "$PORT
     echo "密码： "$PASS
