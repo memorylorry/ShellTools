@@ -4,23 +4,7 @@
 
 ```
 # 下载
-
-wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/shadowsock/PORT_VAL
-
-wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/shadowsock/ss.sh
-
-wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/shadowsock/servercfg.json
-
-# 更改权限
-
-chmod +x ss.sh
-
-# 安装并启动
-
-./ss.sh i
-
-./ss.sh server start
-
+wget https://raw.githubusercontent.com/memorylorry/ShellTools/master/shadowsock/install.sh && chmod +x install.sh && ./install.sh 
 ```
 
 # Linux客户端部署（请参考文件结构，配置信息）
